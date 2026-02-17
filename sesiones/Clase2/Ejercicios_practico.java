@@ -149,6 +149,134 @@ public class Ejercicios_practico {
         System.out.println("Producto con mayor gasto: " + productoMayor);
         System.out.println("Gasto mayor: " + mayorGasto);
 
+        /*
+         * 6. Una agencia administradora de inmuebles ha decidido guardar en un arreglo
+         * lineal de
+         * n posiciones los alquileres que cobran mensualmente a N viviendas que
+         * actualmente
+         * administran. En otro arreglo de igual número de posiciones guardan los
+         * porcentajes de
+         * ganancia por cada vivienda. Crear un nuevo arreglo con las ganancias por cada
+         * vivienda.
+         */
+
+        System.out.println("Por favor ingrese la cantidad de viviendas : ");
+        int vivienda = sc.nextInt();
+
+        double[] alquileres = new double[vivienda];
+        double[] porcentajes = new double[vivienda];
+        double[] ganancias = new double[vivienda];
+
+        // alquileres
+        for (int i = 0; i < vivienda; i++) {
+            System.out.println("Alquiler vivienda " + (i + 1) + ": ");
+            alquileres[i] = sc.nextDouble();
+        }
+
+        // porcentajes
+        for (int i = 0; i < vivienda; i++) {
+            System.out.print("Porcentaje ganancia vivienda " + (i + 1) + ": ");
+            porcentajes[i] = sc.nextDouble();
+        }
+
+        // ganancias
+
+        for (int i = 0; i < vivienda; i++) {
+            ganancias[i] = alquileres[i] * porcentajes[i] / 100;
+
+        }
+
+        for (int i = 0; i < vivienda; i++) {
+            System.out.println("Vivienda " + (i + 1) + ": $" + ganancias[i]);
+        }
+
+        /*
+         * 7. Obten er dos arreglos tal que sus elementos sean los números pares y
+         * números
+         * impares del arreglo A de 10 elementos.
+         */
+
+        int[] A7 = { 4, 5, 6, 1, 8, 9, 0, 8, 5, 20 };
+
+        // 1. contar
+        int pares = 0, impares7 = 0;
+        for (int n : A7)
+            if (n % 2 == 0)
+                pares++;
+            else
+                impares7++;
+
+        // 2. crear arreglos
+        int[] par7 = new int[pares];
+        int[] impar7 = new int[impares7];
+
+        // 3. llenar
+        int p = 0, im = 0;
+        for (int n : A7)
+            if (n % 2 == 0)
+                par7[p++] = n;
+            else
+                impar7[im++] = n;
+
+        // 4. mostrar
+        System.out.print("Pares: ");
+        for (int n : par7)
+            System.out.print(n + " ");
+
+        System.out.print("\nImpares: ");
+        for (int n : impar7)
+            System.out.print(n + " ");
+        /*
+         * 8. Elaborar un programa que lea 30 números y que imprima el número mayor,
+         * menor y el
+         * número de veces que se repiten ambos.
+         */
+
+        int[] numeros = { 4, 7, 2, 9, 7, 2, 5, 9, 1, 3,
+                8, 6, 4, 1, 9, 2, 7, 5, 3, 8,
+                6, 4, 2, 1, 9, 7, 5, 3, 8, 6 };
+
+        int mayor1 = numeros[0];
+        int menor = numeros[0];
+        int contMayor = 0;
+        int contMenor = 0;
+
+        for (int n : numeros) {
+            if (n > mayor1)
+                mayor1 = n;
+            if (n < menor)
+                menor = n;
+        }
+
+        for (int n : numeros) {
+            if (n == mayor1)
+                contMayor++;
+            if (n == menor)
+                contMenor++;
+        }
+
+        System.out.println("Mayor: " + mayor1 + " se repite " + contMayor);
+        System.out.println("Menor: " + menor + " se repite " + contMenor);
+
+        /*
+         * 9. Codifique un programa tal, que dado como entrada un arreglo unidimensional
+         * de
+         * enteros y un número entero, determine cuántas veces se encuentra este número
+         * dentro del arreglo.
+         */
+
+        int[] arreglo = { 4, 7, 2, 7, 9, 7, 1 };
+
+        int buscar = 7;
+        int contador = 0;
+
+        for (int n : arreglo)
+            if (n == buscar)
+                contador++;
+
+        System.out.println("El número " + buscar +
+                " aparece " + contador + " veces");
+
         sc.close();
     }
 
