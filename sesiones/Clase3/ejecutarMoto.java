@@ -34,7 +34,7 @@ public class ejecutarMoto {
                 cad += "-" + m[i].getMarca() + " " + m[i].getPrecio() + " \n";
             }
         }
-        System.out.println("Las motos que puedo comprar con 20000.0US son: " + cad);
+        System.out.println("Las motos que puedo comprar con 20000.0US son:  " + cad);
 
     }
 }
