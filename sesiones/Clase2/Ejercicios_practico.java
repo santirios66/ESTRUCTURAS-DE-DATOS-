@@ -200,11 +200,13 @@ public class Ejercicios_practico {
 
         // 1. contar
         int pares = 0, impares7 = 0;
-        for (int n : A7)
-            if (n % 2 == 0)
+        for (int n : A7) {
+            if (n % 2 == 0) {
                 pares++;
-            else
+            } else {
                 impares7++;
+            }
+        }
 
         // 2. crear arreglos
         int[] par7 = new int[pares];
@@ -212,20 +214,25 @@ public class Ejercicios_practico {
 
         // 3. llenar
         int p = 0, im = 0;
-        for (int n : A7)
-            if (n % 2 == 0)
+        for (int n : A7) {
+            if (n % 2 == 0) {
                 par7[p++] = n;
-            else
+            } else {
                 impar7[im++] = n;
+            }
+        }
 
         // 4. mostrar
         System.out.print("Pares: ");
-        for (int n : par7)
+        for (int n : par7) {
             System.out.print(n + " ");
+        }
 
         System.out.print("\nImpares: ");
-        for (int n : impar7)
+        for (int n : impar7) {
             System.out.print(n + " ");
+        }
+
         /*
          * 8. Elaborar un programa que lea 30 números y que imprima el número mayor,
          * menor y el
@@ -242,17 +249,20 @@ public class Ejercicios_practico {
         int contMenor = 0;
 
         for (int n : numeros) {
-            if (n > mayor1)
+            if (n > mayor1) {
                 mayor1 = n;
-            if (n < menor)
+            } else if (n < menor) {
                 menor = n;
+            }
+
         }
 
         for (int n : numeros) {
-            if (n == mayor1)
+            if (n == mayor1) {
                 contMayor++;
-            if (n == menor)
+            } else if (n == menor) {
                 contMenor++;
+            }
         }
 
         System.out.println("Mayor: " + mayor1 + " se repite " + contMayor);
@@ -270,12 +280,98 @@ public class Ejercicios_practico {
         int buscar = 7;
         int contador = 0;
 
-        for (int n : arreglo)
-            if (n == buscar)
+        for (int n : arreglo) {
+            if (n == buscar) {
                 contador++;
+            }
+        }
 
         System.out.println("El número " + buscar +
                 " aparece " + contador + " veces");
+
+        /*
+         * 10. Dado un arreglo A de N elementos se desea crear otro arreglo, tal que
+         * cada uno de sus
+         * elementos sea la suma de los opuestos en el arreglo dado.
+         * Ejemplo: Arreglo dado A = (8,5,3,10,2,8,1)
+         * Arreglo resultante B=(10,13,5,10)
+         */
+
+        int[] A10 = { 8, 5, 3, 10, 2, 8, 1 };
+
+        int n = A10.length;
+        int tamB = (n + 1) / 2; // tamaño del nuevo arreglo
+        int[] B10 = new int[tamB];
+
+        for (int i = 0; i < tamB; i++) {
+            B10[i] = A10[i] + A10[n - 1 - i];
+        }
+
+        for (int x : B10) {
+            System.out.print(x + " ");
+
+        }
+
+        /*
+         * 11. Dado un arreglo A de N elementos se desea generar tres arreglos que
+         * contengan los
+         * elementos negativos, cero y positivos de arreglo inicial.
+         */
+
+        int[] Arreglo11 = { 0, 3, -4, -5, 6, 7, 3 };
+        int contadorPositivos = 0;
+        int contadorNegativos = 0;
+        int contador0 = 0;
+
+        for (int i = 0; i < Arreglo11.length; i++) {
+            if (Arreglo11[i] > 0) {
+                contadorPositivos++;
+
+            } else if (Arreglo11[i] == 0) {
+                contador0++;
+            } else {
+                contadorNegativos++;
+            }
+        }
+        // CREAR ARREGLOS
+        int[] positivos = new int[contadorPositivos];
+        int[] negativos = new int[contadorNegativos];
+        int[] ceros = new int[contador0];
+
+        // LLENAR
+        int iPos = 0;
+        int iNeg = 0;
+        int iCero = 0;
+
+        for (int i = 0; i < Arreglo11.length; i++) {
+
+            if (Arreglo11[i] > 0) {
+                positivos[iPos] = Arreglo11[i];
+                iPos++;
+
+            } else if (Arreglo11[i] == 0) {
+                ceros[iCero] = Arreglo11[i];
+                iCero++;
+
+            } else {
+                negativos[iNeg] = Arreglo11[i];
+                iNeg++;
+            }
+        }
+
+        for (int i = 0; i < positivos.length; i++) {
+            System.out.print(positivos[i] + " ");
+        }
+
+        for (int i = 0; i < negativos.length; i++) {
+            System.out.print(negativos[i] + " ");
+        }
+
+        for (int i = 0; i < ceros.length; i++) {
+            System.out.print(ceros[i] + " ");
+        }
+
+        System.out.println();
 
         sc.close();
     }
