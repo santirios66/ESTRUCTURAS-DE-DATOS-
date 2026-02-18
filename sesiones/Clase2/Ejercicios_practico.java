@@ -387,7 +387,7 @@ public class Ejercicios_practico {
         // contar
         int contador12 = 0;
         for (int i = 0; i < A12.length; i++) {
-            if (A12[i] == X){
+            if (A12[i] == X) {
                 contador12++;
             }
         }
@@ -406,10 +406,104 @@ public class Ejercicios_practico {
 
         // mostrar
         System.out.print("Posiciones: ");
-        for (int i = 0; i < B12.length; i++){
+        for (int i = 0; i < B12.length; i++) {
             System.out.print(B12[i] + " ");
         }
 
+        /*
+         * 13. Dado un arreglo A de N elementos se desea almacenar los elementos mayores
+         * y menores que la media en vectores diferentes.
+         */
+
+        int[] A13 = { 4, 6, 8, 2, 6, 9, 5, 1 };
+
+        double suma13 = 0;
+        for (int i13 = 0; i13 < A13.length; i13++) {
+            suma13 += A13[i13];
+        }
+
+        double media = suma13 / A13.length;
+
+        int contMay = 0;
+        int contMen = 0;
+
+        for (int i13 = 0; i13 < A13.length; i13++) {
+            if (A13[i13] > media) {
+                contMay++;
+            } else if (A13[i13] < media) {
+                contMen++;
+            }
+        }
+
+        int[] mayores = new int[contMay];
+        int[] menores = new int[contMen];
+
+        int m = 0;
+        int n13 = 0;
+
+        for (int i13 = 0; i13 < A13.length; i13++) {
+            if (A13[i13] > media) {
+                mayores[m] = A13[i13];
+                m++;
+            } else if (A13[i13] < media) {
+                menores[n13] = A13[i13];
+                n13++;
+            }
+        }
+
+        System.out.println("Media: " + media);
+
+        System.out.print("Mayores: ");
+        for (int i13 = 0; i13 < mayores.length; i13++) {
+            System.out.print(mayores[i13] + " ");
+        }
+
+        System.out.print("\nMenores: ");
+        for (int i13 = 0; i13 < menores.length; i13++) {
+            System.out.print(menores[i13] + " ");
+        }
+
+        /*
+         * 14. Dado un arreglo obtener otro arreglo con la diferencia de elementos
+         * sucesivos
+         */
+
+        int[] A14 = { 4, 6, 8, 2, 6, 9, 5, 1 };
+
+        int[] B14 = new int[A14.length - 1];
+
+        for (int i14 = 0; i14 < A14.length - 1; i14++) {
+            B14[i14] = A14[i14] - A14[i14 + 1];
+        }
+
+        System.out.print("\nArreglo diferencia: ");
+        for (int i14 = 0; i14 < B14.length; i14++) {
+            System.out.print(B14[i14] + " ");
+        }
+
+        /*
+         * 15. Nombres y sueldos. Mostrar quién gana más que el promedio.
+         */
+
+        String[] nombres = { "Ana", "Luis", "Carlos", "Maria" };
+        double[] sueldos = { 1200, 1500, 900, 2000 };
+
+        double sumaSueldos = 0;
+
+        for (int i15 = 0; i15 < sueldos.length; i15++) {
+            sumaSueldos += sueldos[i15];
+        }
+
+        double promedio = sumaSueldos / sueldos.length;
+
+        System.out.println("\nPromedio sueldos: " + promedio);
+        System.out.println("Ganan mas que el promedio:");
+
+        for (int i15 = 0; i15 < sueldos.length; i15++) {
+            if (sueldos[i15] > promedio) {
+                System.out.println(nombres[i15] + " gana " + sueldos[i15]);
+            }
+        }
 
         sc.close();
     }
