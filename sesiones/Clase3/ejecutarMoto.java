@@ -28,7 +28,7 @@ public class ejecutarMoto {
         System.out.println("El promedio de los modelos dela motos del arreglo es : " + (suma / m.length));
 
         // Obtener las motos que puedo comprar con un presupuesto de 20000 dólares.
-        String cad = "\n";
+        String cad = "\n ";
         for (int i = 0; i < m.length; i++) {
             if (m[i].getPrecio() <= 20000.0) {
                 cad += "-" + m[i].getMarca() + " " + m[i].getPrecio() + " \n";
