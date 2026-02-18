@@ -5,10 +5,10 @@ public class EjecutarCurso {
         
         Curso[] cursos = new Curso[5];
 
-        cursos[0] = new Curso(1, "Matemáticas", "Carlos", 25);
-        cursos[1] = new Curso(2, "Programación", "Ana", 30);
+        cursos[0] = new Curso(1, "estructura de datos", "Carlos", 25);
+        cursos[1] = new Curso(2, "estadistica", "Ana", 30);
         cursos[2] = new Curso(3, "Física", "Luis", 20);
-        cursos[3] = new Curso(4, "Inglés", "Marta", 15);
+        cursos[3] = new Curso(4, "programacion", "Marta", 15);
         cursos[4] = new Curso(5, "calculo", "jhon haide cano", 80);
 
         int totalEstudiantes = 0;

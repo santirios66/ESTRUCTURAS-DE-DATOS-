@@ -2,11 +2,13 @@ package sesiones.Clase3.ejerccio_individual;
 
 public class Curso {
 
+    //Atributos 
     private int id;
     private String nombreCurso;
     private String profesor;
     private int cantStudents;
-
+    
+    //Constructor 
     public Curso(int id, String nombreCurso, String profesor, int cantStudents) {
         this.id = id;
         this.nombreCurso = nombreCurso;
