@@ -371,7 +371,45 @@ public class Ejercicios_practico {
             System.out.print(ceros[i] + " ");
         }
 
-        System.out.println();
+        /*
+         * 12. Dado un arreglo A de N elementos se quiere generar otro arreglo que
+         * contenga las
+         * posiciones de los elementos del arreglo dado que sean iguales a un valor x
+         * dado.
+         * Ejemplo: Arreglo dado A=(4,6,8,2,6,9,6,1)
+         * X=6
+         * Arreglo resultante B=(2,5,7)
+         */
+
+        int[] A12 = { 4, 6, 8, 2, 6, 9, 6, 1 };
+        int X = 6;
+
+        // contar
+        int contador12 = 0;
+        for (int i = 0; i < A12.length; i++) {
+            if (A12[i] == X){
+                contador12++;
+            }
+        }
+
+        // crear arreglo
+        int[] B12 = new int[contador12];
+
+        // guardar posiciones
+        int j = 0;
+        for (int i = 0; i < A12.length; i++) {
+            if (A12[i] == X) {
+                B12[j] = i + 1; // +1 para posición humana
+                j++;
+            }
+        }
+
+        // mostrar
+        System.out.print("Posiciones: ");
+        for (int i = 0; i < B12.length; i++){
+            System.out.print(B12[i] + " ");
+        }
+
 
         sc.close();
     }
