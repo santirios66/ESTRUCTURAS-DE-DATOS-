@@ -29,5 +29,10 @@ public class SystemOrdens {
         pedidos.get("Luis").add("Camisa");
         System.out.println("Pedido de Luis  : " + pedidos.get("Luis"));
 
+        pedidos.forEach((cliente, lista) -> {
+            System.out.println("Cliente: " + cliente);
+            lista.forEach(producto -> System.out.println(" - " + producto));
+        });
+        
     }
 }

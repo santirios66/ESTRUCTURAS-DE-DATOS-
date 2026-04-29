@@ -14,7 +14,7 @@ public class producto {
 
         System.out.println("El producto 102 exisite : " + productos.containsKey(102));
 
-        productos.put(101, "Audifonos"); // se repmalza el valor Laptop por Audifonos 
+        productos.put(101, "Audifonos"); // se repmalza el valor Laptop por Audifonos
 
         System.out.println("El producto 102 existe : " + productos.get(101));
 
@@ -24,6 +24,9 @@ public class producto {
                     " -> Producto: " + entrada.getValue());
 
         }
+        productos.forEach((key, value) -> {
+            System.out.println("Código: [" + key + "] -> Producto: [" + value + "]");
+        });
 
     }
 }
