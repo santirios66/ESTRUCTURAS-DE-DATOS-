@@ -4,7 +4,7 @@ public class Main {
 public static void main(String[] args) {
 
         // registramos los contenedores que llegan en el camion
-        Manifiesto manifiesto = new Manifiesto(3);
+        Manifiesto manifiesto = new Manifiesto(4);
         manifiesto.leerDatos();
         manifiesto.mostrarResumen();
 

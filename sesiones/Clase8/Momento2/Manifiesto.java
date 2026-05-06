@@ -54,6 +54,7 @@ public class Manifiesto {
             contenedores[i] = new Contenedor(id, peso, prioridad);
         }
 
+        sc.close();
     }
 
     // mostramos todo y sumamos el peso
@@ -92,4 +93,6 @@ public class Manifiesto {
     public Contenedor[] getContenedores() {
         return contenedores;
     }
+
+    
 }
